@@ -1,4 +1,4 @@
-/*§
+/*^
   ===========================================================================
   Helios - JPA
   ===========================================================================
@@ -25,7 +25,6 @@ import javax.persistence.{EntityManager, EntityManagerFactory, Query}
 import scala.language.implicitConversions
 
 
-
 /**
   * Extension methods for EntityManagerFactory
   *
@@ -34,6 +33,7 @@ import scala.language.implicitConversions
 class EntityManagerFactoryExtensions private[jpa](entityManagerFactory: EntityManagerFactory) {
   /**
     * Creates an EntityManager and passes it to the unit of work - automatically closing it in the end
+    *
     * @param unitOfWork A function receiving an EntityManager and returning a value - which will be returned by this function as well
     * @tparam T The result type of the unit of work
     * @return The result of the unit of work
@@ -52,6 +52,7 @@ class EntityManagerFactoryExtensions private[jpa](entityManagerFactory: EntityMa
 
   /**
     * Similar to runUnitOfWork(), but the given unit of work is run in the context of a transaction which is automatically opened and then committed in the end
+    *
     * @param transactionalUnit The unit of work, receiving an EntityManager and returning a value
     * @tparam T The result type of the unit of work
     * @return The result of the unit of work
@@ -75,9 +76,10 @@ class EntityManagerFactoryExtensions private[jpa](entityManagerFactory: EntityMa
 
   /**
     * Creates a named query for the given class - therefore simplifying the creation of global query names
+    *
     * @param namespaceClass The class providing the first part of the global namespace
-    * @param localName A local name, which - consequently - does not need to be unique
-    * @param query The query object to be named
+    * @param localName      A local name, which - consequently - does not need to be unique
+    * @param query          The query object to be named
     */
   def addNamedQueryFor(namespaceClass: Class[_], localName: String, query: Query): Unit = {
     val fullName =
@@ -92,8 +94,9 @@ class EntityManagerFactoryExtensions private[jpa](entityManagerFactory: EntityMa
 
   /**
     * Creates a named query for the given class - therefore simplifying the creation of global query names
-    * @param namespaceClass The class providing the first part of the global namespace
-    * @param localName A local name, which - consequently - does not need to be unique
+    *
+    * @param namespaceClass  The class providing the first part of the global namespace
+    * @param localName       A local name, which - consequently - does not need to be unique
     * @param queryDefinition The query definition string
     */
   def addNamedQueryFor(namespaceClass: Class[_], localName: String, queryDefinition: String): Unit = {

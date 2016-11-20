@@ -7,7 +7,11 @@
 
 **Helios-jpa** is one of the modules composing the [Helios](https://www.facebook.com/pages/Helios/206962992779275) project - a multifaceted Scala library.
 
-The main purpose of Helios-jpa is providing JPA-related utilities - in particular, handy extension methods for *EntityManagerFactory* and *EntityManager*.
+The main purpose of Helios-jpa is providing JPA-related utilities - in particular, handy extension methods for *EntityManagerFactory* and *EntityManager* available via the **Includes** object; to use it, just import its extension methods:
+
+```scala
+import info.gianlucacosta.helios.jpa.Includes._
+```
 
 Helios is meant to evolve over time - please refer to its Scaladoc or its source code for more details on its current packages.
 

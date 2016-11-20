@@ -1,4 +1,4 @@
-/*§
+/*^
   ===========================================================================
   Helios - JPA
   ===========================================================================
@@ -28,8 +28,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:4.3'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+        classpath 'info.gianlucacosta.moonlicense:moonlicense-gradle:5.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'info.gianlucacosta.aurora:aurora:8.0'
     }
 }
@@ -46,10 +46,12 @@ apply plugin: 'info.gianlucacosta.aurora'
 
 group = 'info.gianlucacosta.helios'
 archivesBaseName = 'helios-jpa'
-version = '1.0-SNAPSHOT'
+version = '1.0'
+
 
 description = 'Scala library of JPA utilities'
 
+ext.facebookPage = "https://www.facebook.com/Helios-206962992779275"
 
 
 dependencies {
@@ -57,10 +59,8 @@ dependencies {
 
     compile 'org.scala-lang:scala-library:2.11.8'
 
-    compile 'org.hibernate:hibernate-core:5.2.3.Final'
     compile 'org.hibernate:hibernate-entitymanager:5.2.3.Final'
 }
-
 
 
 aurora {
